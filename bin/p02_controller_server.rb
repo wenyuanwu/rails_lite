@@ -10,6 +10,32 @@ class MyController < ControllerBase
     end
   end
 end
+
+
+# class ControllerBase
+
+#   def initialize(req,res)
+#     @req = req
+#     @res = res
+#   end 
+
+#   def render_content(content, content_type) 
+#     @already_build_response ||= @res
+#     if @already_build_response
+#       flash[:erorrs] = ["Render twice"]
+#     end 
+#     @res.body = content
+#     @res['Content-Type'] = content_type
+#   end 
+
+#   def redirect_to(url) 
+#     @res['Location'] = url
+#     @res.status = 302
+#   end 
+
+# end 
+
+
 app = Proc.new do |env|
   req = Rack::Request.new(env)
   res = Rack::Response.new
